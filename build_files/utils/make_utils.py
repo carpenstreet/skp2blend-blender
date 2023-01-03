@@ -6,6 +6,7 @@ import re
 import shutil
 import subprocess
 import sys
+import os
 
 
 def call(cmd, exit_on_error=True, silent=False):
@@ -81,6 +82,8 @@ def git_branch_release_version(branch, tag):
 
 
 def svn_libraries_base_url(release_version, branch=None):
+    # 파일에서 Blender release version 정보 가져오기
+    release_version = open(os.path.dirname(__file__) + "/../../.release-version").readline()
     if release_version:
         svn_branch = "tags/blender-" + release_version + "-release"
     elif branch:
