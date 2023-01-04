@@ -55,6 +55,9 @@ def paths():
     # if folder addons_contrib/ exists, scripts in there will be loaded too
     addon_paths += _bpy.utils.script_paths(subdir="addons_contrib")
 
+    # ACON3D SCRIPTS: ACON3D scripts for Blender
+    addon_paths += _bpy.utils.script_paths(subdir="addons_acon3d")
+
     return addon_paths
 
 
