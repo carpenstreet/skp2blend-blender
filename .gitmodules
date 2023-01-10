@@ -20,6 +20,6 @@
 	ignore = all
 [submodule "release/scripts/addons_acon3d/io_skp"]
 	path = release/scripts/addons_acon3d/io_skp
-	url = git@github.com:ACON3D/skp2blend.git
-	branch = feature/install-import-skp
+	url = git@github.com:ACON3D/skp2blend-importer.git
+	branch = develop
 	ignore = all
