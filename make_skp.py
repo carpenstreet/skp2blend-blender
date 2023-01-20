@@ -4,7 +4,7 @@ import shutil
 
 SOURCE = "./release/scripts/addons_acon3d/io_skp"
 DESTINATION = ""
-TARGET = "2.96/scripts/addons_acon3d/io_skp"
+TARGET = "3.0/scripts/addons_acon3d/io_skp"
 
 
 def copy_scripts(src, dest):
