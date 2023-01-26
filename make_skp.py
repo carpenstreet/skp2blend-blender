@@ -16,7 +16,7 @@ if platform.system() == "Windows":
     DESTINATION = "../build_windows_x64_vc17_Release/bin/Release/"
     DESTINATION = os.path.join(DESTINATION, TARGET)
 elif platform.system() == "Darwin":
-    DESTINATION = "../build_darwin/bin/ABLER.app/Contents/Resources/"
+    DESTINATION = "../build_darwin/bin/Blender.app/Contents/Resources/"
     DESTINATION = os.path.join(DESTINATION, TARGET)
 else:
     print("Not supported")
