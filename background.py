@@ -4,7 +4,7 @@ import bpy
 
 argv = sys.argv
 argv = argv[argv.index("--") + 1:]  # get all args after "--"
-filename = argv[0]
+filename = " ".join(argv)
 name, ext = os.path.splitext(filename)
 
 
