@@ -5,6 +5,10 @@ if "%BUILD_VS_YEAR%"=="2022" set BUILD_VS_LIBDIRPOST=vc15
 set BUILD_VS_SVNDIR=win64_%BUILD_VS_LIBDIRPOST%
 set BUILD_VS_LIBDIR="%BLENDER_DIR%..\lib\%BUILD_VS_SVNDIR%"
 
+rem 파일에서 Blender release version 정보 가져오기
+set /p RELEASE_VERSION=<"%BLENDER_DIR%\.release-version"
+set RELEASE_VERSION="tags/blender-%RELEASE_VERSION%-release"
+
 if NOT "%verbose%" == "" (
 	echo Library Directory = "%BUILD_VS_LIBDIR%"
 )
@@ -20,7 +24,7 @@ if NOT EXIST %BUILD_VS_LIBDIR% (
 			echo Downloading %BUILD_VS_SVNDIR% libraries, please wait.
 			echo.
 :RETRY			
-			"%SVN%" checkout https://svn.blender.org/svnroot/bf-blender/trunk/lib/%BUILD_VS_SVNDIR% %BUILD_VS_LIBDIR%
+			"%SVN%" checkout https://svn.blender.org/svnroot/bf-blender/%RELEASE_VERSION%/lib/%BUILD_VS_SVNDIR% %BUILD_VS_LIBDIR%
 			if errorlevel 1 (
 				set /p LibRetry= "Error during download, retry? y/n"
 				if /I "!LibRetry!"=="Y" (

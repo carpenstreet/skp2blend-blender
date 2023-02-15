@@ -69,6 +69,13 @@ if "%BUILD_UPDATE%" == "1" (
 	goto EOF
 )
 
+if "%BUILD_SKP%" == "1" (
+    call "%BLENDER_DIR%\build_files\windows\make_skp.cmd"
+    if errorlevel 1 goto EOF
+
+    goto EOF
+)
+
 call "%BLENDER_DIR%\build_files\windows\set_build_dir.cmd"
 
 :convenience_targets
